@@ -460,12 +460,9 @@ impl<'a> Writer<'a> for HTML<'a> {
                                     )
                                 };
                             } else {
-
                                 eprintln!(
-                                       "Attachment not found at specified path: {:?}. Original filename: {}",
-                                       qualified_attachment_path,
-                                       attachment.filename()
-
+                                    "Attachment not found at specified path: {:?}",
+                                    qualified_attachment_path
                                 );
                                 return Err(attachment.filename());
                             }
@@ -505,11 +502,9 @@ impl<'a> Writer<'a> for HTML<'a> {
                         "{ATTACHMENTS_DIR}/{}/{}",
                         sub_dir,
                         path.file_name()
-                            .ok_or(attachment.filename())?
-                            .to_str()
-                            .ok_or(attachment
+                            .ok_or
 
-
+    
     fn format_app(
         &self,
         message: &'a Message,
