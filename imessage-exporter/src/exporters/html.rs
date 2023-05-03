@@ -462,7 +462,11 @@ impl<'a> Writer<'a> for HTML<'a> {
                                     eprintln!("Unable to copy {qualified_attachment_path:?} to {copy_path:?}: {why}")
                                 };
                             } else {
-                                eprintln!("Attachment not found at specified path: {qualified_attachment_path:?}");
+                                eprintln!("eprintln!(
+                                       "Attachment not found at specified path: {:?}. Original filename: {}",
+                                       qualified_attachment_path,
+                                       attachment.filename()
+                                );
                                 return Err(attachment.filename());
                             }
                         }
