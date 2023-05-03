@@ -460,9 +460,12 @@ impl<'a> Writer<'a> for HTML<'a> {
                                     )
                                 };
                             } else {
+
                                 eprintln!(
-                                    "Attachment not found at specified path: {:?}",
-                                    qualified_attachment_path
+                                       "Attachment not found at specified path: {:?}. Original filename: {}",
+                                       qualified_attachment_path,
+                                       attachment.filename()
+
                                 );
                                 return Err(attachment.filename());
                             }
