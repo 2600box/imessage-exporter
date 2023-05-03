@@ -506,6 +506,7 @@ impl<'a> Writer<'a> for HTML<'a> {
                             .to_str()
                             .ok_or(attachment
 
+
     fn format_app(
         &self,
         message: &'a Message,
